@@ -60,7 +60,7 @@ include("config.php");
                                         <td class="align-middle text-center">
                                             <img src="<?= $data["Foto"]?>" style="width: 100px; height: 100px; object-fit: cover;">
                                         </td>
-                                        <td class="align-middle">
+                                        <td class="align-middle text-center">
                                             <a href="edit_data_caketos.php?id=<?= $data['id_calon']; ?>" class="btn btn-primary align-middle">Edit</a>
                                             <a href="delete_caketos.php?id=<?= $data['id_calon']; ?>" class="btn btn-danger align-middle">Delete</a>
                                         </td>

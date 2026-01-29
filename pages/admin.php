@@ -60,7 +60,7 @@ include("config.php");
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold"><?= $data["Alamat"]?></span>
                                         </td>
-                                        <td class="align-middle">
+                                        <td class="align-middle text-center">
                                             <a href="edit_data_admin.php?id=<?= $data['id_admin']; ?>" class="btn btn-primary align-middle">Edit</a>
                                             <a href="delete_admin.php?id=<?= $data['id_admin']; ?>" class="btn btn-danger align-middle">Delete</a>
                                         </td>
