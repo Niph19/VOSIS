@@ -30,6 +30,9 @@ include("config.php");
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Alamat</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,6 +62,7 @@ include("config.php");
                                         </td>
                                         <td class="align-middle">
                                             <a href="edit_data_admin.php?id=<?= $data['id_admin']; ?>" class="btn btn-primary align-middle">Edit</a>
+                                            <a href="delete_admin.php?id=<?= $data['id_admin']; ?>" class="btn btn-danger align-middle">Delete</a>
                                         </td>
                                     </tr>
                                     <?php endforeach ?>
