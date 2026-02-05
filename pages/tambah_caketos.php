@@ -11,7 +11,7 @@ include("config.php");
                     <h6>Tambah Calon Ketua OSIS</h6>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
-                    <form class="px-3" method="POST">
+                    <form class="px-3" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" name="data_nama">
@@ -38,10 +38,9 @@ include("config.php");
                         $Nama = $_POST['data_nama'];
                         $Visi = $_POST['data_visi'];
                         $Misi = $_POST['data_misi'];
-                        $Foto = $_POST['data_foto'];
 
                         $query = "INSERT INTO tbl_caketos(Nama, Visi, Misi, Foto) 
-                        VALUES ('$Nama','$Visi','$Misi', '$Foto')";
+                        VALUES ('$Nama','$Visi','$Misi', '$nama_baru')";
 
                         if (mysqli_query($koneksi, $query)) {
                             echo "<div class='alert alert-success text-center'>Data Berhasil Disimpan</div>";
@@ -50,7 +49,23 @@ include("config.php");
                             Gagal : " . mysqli_error($koneksi) . "
                         </div>";
                         }
-                    }
+                        // Folder Upload
+                        $folder = "../assets/img/caketos/";
+                        
+                        // Ambil data file
+                        $nama_File = $_FILES['data_foto']['name'];
+                        $tmp_File = $_FILES['data_foto']['tmp_name'];
+                        // $_FILES['foto]['name']  : variable bawaan php untuk menampung data file yang di upload
+                        // [foto] : name pada form, [name] untuk mengambil nama asli file yang di upload oleh user
+                        
+                        // Membuat Nama unik
+                        $nama_baru = time() . "_" . $nama_File;
+                        
+                        // Pindahkan file ke folder tujuan
+                        move_uploaded_file($tmp_File, $folder . $nama_baru);
+                        
+                        mysqli_query($koneksi,"INSERT INTO tbl_caketos(Nama, Visi, Misi, Foto) VALUES ('$Nama', '$Visi', '$Misi', '$nama_baru')");
+                        }
                     ?>
                 </div>
             </div>

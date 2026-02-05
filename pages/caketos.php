@@ -19,6 +19,9 @@ include("config.php");
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Nomor</th>
                                     <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Foto</th>
+                                    <th
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Nama</th>
                                     <th
@@ -29,44 +32,44 @@ include("config.php");
                                         Misi</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Foto</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                            $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM `tbl_caketos`");
-                            foreach ($query as $data):  ?>
+                                $no = 1;
+                                $query = mysqli_query($koneksi, "SELECT * FROM `tbl_caketos`");
+                                foreach ($query as $data): ?>
                                     <tr>
                                         <td>
-                                            <div class="d-flex px-2 py-1">
+                                            <div class="d-flex px-0 py-1">
                                                 <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 text-sm"><?= $no++; ?></h6>
+                                                    <h6 class="mb-0 px-0 text-sm"><?= $no++; ?></h6>
                                                 </div>
                                             </div>
                                         </td>
+                                        <td class="align-middle text-center p-2">
+                                            <img src="../assets/img/caketos/<?= $data['Foto']?>" class="avatar avatar-md" style="width: 100px; height: 100px; object-fit: cover;">
+                                        </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Nama']?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Nama'] ?></p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Visi']?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Visi'] ?></p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Misi']?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Misi'] ?></p>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <img src="<?= $data["Foto"]?>" style="width: 100px; height: 100px; object-fit: cover;">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <a href="edit_data_caketos.php?id=<?= $data['id_calon']; ?>" class="btn btn-primary align-middle">Edit</a>
-                                            <a href="delete_caketos.php?id=<?= $data['id_calon']; ?>" class="btn btn-danger align-middle">Delete</a>
+                                            <a href="edit_data_caketos.php?id=<?= $data['id_calon']; ?>"
+                                                class="btn btn-primary align-middle">Edit</a>
+                                            <a href="delete_caketos.php?id=<?= $data['id_calon']; ?>"
+                                                class="btn btn-danger align-middle">Delete</a>
                                         </td>
                                     </tr>
-                                    <?php endforeach ?>
-                                </tbody>
+                                <?php endforeach ?>
+                            </tbody>
+
                         </table>
                     </div>
                 </div>
