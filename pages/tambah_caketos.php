@@ -14,19 +14,19 @@ include("config.php");
                     <form class="px-3" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" name="data_nama">
+                            <input type="text" class="form-control" name="data_nama" required>
                         </div>
                         <div class="form-group">
                             <label for="visi">Visi</label>
-                            <input type="text" class="form-control" name="data_visi">
+                            <input type="text" class="form-control" name="data_visi" required>
                         </div>
                         <div class="form-group">
                             <label for="misi">Misi</label>
-                            <input type="text" class="form-control" name="data_misi">
+                            <input type="text" class="form-control" name="data_misi" required>
                         </div>
                         <div class="form-group">
                             <label for="image_uploads">Upload Foto Calon</label><br>
-                            <input type="file" id="foto_calon" name="data_foto_calon"
+                            <input type="file" id="foto_calon" required name="data_foto_calon"
                                 accept="image/png, image/jpeg, image/jpg" />
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">

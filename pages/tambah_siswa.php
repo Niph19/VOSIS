@@ -32,18 +32,18 @@ include("config.php");
 
                         <div class="form-group">
                             <label for="jurusan">Jurusan</label>
-                            <input type="text" class="form-control" name="data_jurusan" placeholder="Jurusan Anda">
+                            <input type="text" class="form-control" name="data_jurusan" placeholder="Jurusan Anda" required>
                         </div>
 
 
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" name="data_alamat" placeholder="Alamat Anda">
+                            <input type="text" class="form-control" name="data_alamat" placeholder="Alamat Anda" required>
                         </div>
 
                         <div class="form-group">
                             <label for="image_uploads">Upload Foto Siswa</label><br>
-                            <input type="file" id="foto_siswa" name="data_foto_siswa"
+                            <input type="file" id="foto_siswa" required name="data_foto_siswa"
                                 accept="image/png, image/jpeg, image/jpg" />
                         </div>
 

@@ -14,23 +14,23 @@ include("config.php");
                     <form class="px-3" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="data_username">
+                            <input type="text" class="form-control" name="data_username" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="data_password">
+                            <input type="password" class="form-control" name="data_password" required>
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" name="data_nama">
+                            <input type="text" class="form-control" name="data_nama" required>
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" name="data_alamat">
+                            <input type="text" class="form-control" name="data_alamat" required>
                         </div>
                         <div class="form-group">
                             <label for="image_uploads">Upload Foto Admin</label><br>
-                            <input type="file" id="foto_admin" name="data_foto_admin"
+                            <input type="file" id="foto_admin" required name="data_foto_admin"
                                 accept="image/png, image/jpeg, image/jpg" />
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">
