@@ -11,7 +11,7 @@ include("config.php");
                     <h6>Tambah Siswa</h6>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
-                    <form class="px-3" method="POST">
+                    <form class="px-3" method="POST" enctype="multipart/form-data">
 
 
                         <div class="form-group">
@@ -41,6 +41,12 @@ include("config.php");
                             <input type="text" class="form-control" name="data_alamat" placeholder="Alamat Anda">
                         </div>
 
+                        <div class="form-group">
+                            <label for="image_uploads">Upload Foto Siswa</label><br>
+                            <input type="file" id="foto_siswa" name="data_foto_siswa"
+                                accept="image/png, image/jpeg, image/jpg" />
+                        </div>
+
                         
                         <button type="submit" class="btn btn-primary btn-lg">
                                         <i class="fa-solid fa-paper-plane"></i>Tambahkan data
@@ -54,8 +60,22 @@ include("config.php");
                         $jurusan = $_POST['data_jurusan'];
                         $alamat = $_POST['data_alamat'];
 
-                        $query = "INSERT INTO tbl_siswa(Nama, Kelas, Jurusan, Alamat) 
-                        VALUES ('$Nama','$kelas','$jurusan', '$alamat')";
+                        // Folder Upload
+                        $folder = "../assets/img/siswa/";
+                        
+                        // Ambil data file
+                        $nama_File = $_FILES['data_foto_siswa']['name'];
+                        $tmp_File = $_FILES['data_foto_siswa']['tmp_name'];
+                        // $_FILES['foto]['name']  : variable bawaan php untuk menampung data file yang di upload
+                        // [foto] : name pada form, [name] untuk mengambil nama asli file yang di upload oleh user
+                        
+                        // Membuat Nama unik
+                        $nama_baru = time() . "_" . $nama_File;
+
+                        // Pindahkan file ke folder tujuan
+                        move_uploaded_file($tmp_File, $folder . $nama_baru);
+                        $query = "INSERT INTO tbl_siswa(Nama, Kelas, Jurusan, Alamat, Foto) 
+                        VALUES ('$Nama','$kelas','$jurusan', '$alamat', '$nama_baru')";
 
                         if (mysqli_query($koneksi, $query)) {
                             echo "<div class='alert alert-success text-center'>Data Berhasil Disimpan</div>";

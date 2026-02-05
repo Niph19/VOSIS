@@ -26,11 +26,12 @@ include("config.php");
                         </div>
                         <div class="form-group">
                             <label for="image_uploads">Upload Foto Calon</label><br>
-                            <input type="file" id="foto_calon" name="data_foto" accept="image/png, image/jpeg, image/jpg"/>
+                            <input type="file" id="foto_calon" name="data_foto_calon"
+                                accept="image/png, image/jpeg, image/jpg" />
                         </div>
                         <button type="submit" class="btn btn-primary btn-lg">
-                                        <i class="fa-solid fa-paper-plane"></i>Tambahkan data Calon
-                                    </button>
+                            <i class="fa-solid fa-paper-plane"></i>Tambahkan data Calon
+                        </button>
                     </form>
                     <?php
                     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -38,9 +39,24 @@ include("config.php");
                         $Nama = $_POST['data_nama'];
                         $Visi = $_POST['data_visi'];
                         $Misi = $_POST['data_misi'];
+                        // Folder Upload
+                        $folder = "../assets/img/caketos/";
+                        
+                        // Ambil data file
+                        $nama_File = $_FILES['data_foto_calon']['name'];
+                        $tmp_File = $_FILES['data_foto_calon']['tmp_name'];
+                        // $_FILES['foto]['name']  : variable bawaan php untuk menampung data file yang di upload
+                        // [foto] : name pada form, [name] untuk mengambil nama asli file yang di upload oleh user
+                        
+                        // Membuat Nama unik
+                        $nama_baru = time() . "_" . $nama_File;
 
+                        // Pindahkan file ke folder tujuan
+                        move_uploaded_file($tmp_File, $folder . $nama_baru);
                         $query = "INSERT INTO tbl_caketos(Nama, Visi, Misi, Foto) 
                         VALUES ('$Nama','$Visi','$Misi', '$nama_baru')";
+
+
 
                         if (mysqli_query($koneksi, $query)) {
                             echo "<div class='alert alert-success text-center'>Data Berhasil Disimpan</div>";
@@ -49,23 +65,7 @@ include("config.php");
                             Gagal : " . mysqli_error($koneksi) . "
                         </div>";
                         }
-                        // Folder Upload
-                        $folder = "../assets/img/caketos/";
-                        
-                        // Ambil data file
-                        $nama_File = $_FILES['data_foto']['name'];
-                        $tmp_File = $_FILES['data_foto']['tmp_name'];
-                        // $_FILES['foto]['name']  : variable bawaan php untuk menampung data file yang di upload
-                        // [foto] : name pada form, [name] untuk mengambil nama asli file yang di upload oleh user
-                        
-                        // Membuat Nama unik
-                        $nama_baru = time() . "_" . $nama_File;
-                        
-                        // Pindahkan file ke folder tujuan
-                        move_uploaded_file($tmp_File, $folder . $nama_baru);
-                        
-                        mysqli_query($koneksi,"INSERT INTO tbl_caketos(Nama, Visi, Misi, Foto) VALUES ('$Nama', '$Visi', '$Misi', '$nama_baru')");
-                        }
+                    }
                     ?>
                 </div>
             </div>

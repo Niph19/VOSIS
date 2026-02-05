@@ -16,13 +16,13 @@ include("config.php");
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 5%;">
                                         Nomor</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 " style="width: 10%; ">
                                         Foto</th>
                                     <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 px-2 text-center" style="width: 15%; ">
                                         Nama</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -31,7 +31,7 @@ include("config.php");
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Misi</th>
                                     <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 15%; ">
                                         Action</th>
                                 </tr>
                             </thead>
@@ -42,17 +42,17 @@ include("config.php");
                                 foreach ($query as $data): ?>
                                     <tr>
                                         <td>
-                                            <div class="d-flex px-0 py-1">
+                                            <div class="d-flex px-0 py-1 text-center">
                                                 <div class="d-flex flex-column justify-content-center">
-                                                    <h6 class="mb-0 px-0 text-sm"><?= $no++; ?></h6>
+                                                    <h6 class="mb-0 pe-0 ps-4 text-sm "><?= $no++; ?></h6>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="align-middle text-center p-2">
-                                            <img src="../assets/img/caketos/<?= $data['Foto']?>" class="avatar avatar-md" style="width: 100px; height: 100px; object-fit: cover;">
+                                            <img src="../assets/img/caketos/<?= $data['Foto']?>" class="avatar avatar-md rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Nama'] ?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-center"><?= $data['Nama'] ?></p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             <p class="text-xs font-weight-bold mb-0"><?= $data['Visi'] ?></p>
