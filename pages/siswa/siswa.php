@@ -8,7 +8,7 @@ include("../header/config.php");
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Data Siswa</h6>
-                    <a href="tambah_siswa.php" class="btn btn-primary">Tambah Siswa</a>
+                    <a href="tambah_siswa.php" class="btn btn-primary">Tambah Data</a>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">

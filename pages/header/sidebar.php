@@ -41,7 +41,7 @@ include("config.php");
         id="sidenav-main">
         <div class="sidenav-header">
             <a href="../dashboard/dashboard.php" style="padding-left: 8px;">
-                <img src="../../assets/img/VOSIS.png" class="" alt="main_logo" height="68" width="245">
+                <img src="../../assets/img/VOSIS.png" class="pe-4" alt="main_logo" height="68" width="245">
             </a>
         </div>
         <hr class="horizontal dark mt-0">
@@ -159,7 +159,7 @@ include("config.php");
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link  <?= $current_page == 'index.php' || $current_page == '' ? 'active' : ''?> " href="../../index.php">
+                    <a class="nav-link  <?= $current_page == 'chart.php' || $current_page == '' ? 'active' : ''?> " href="../admin/chart.php">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1"
@@ -185,7 +185,7 @@ include("config.php");
                                 </g>
                             </svg>
                         </div>
-                        <span class="nav-link-text ms-1">Voting</span>
+                        <span class="nav-link-text ms-1">Laporan</span>
                     </a>
                 </li>
             </ul>
