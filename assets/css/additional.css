@@ -1,0 +1,38 @@
+#card-body1 {
+    background-color: #C9A050;
+    border-radius: 10px;
+}
+
+#text-card {
+    color: #FBF9F1;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#color-primary {
+    color: #1A2F50;
+}
+
+#bg-primary {
+    background-color: #1A2F50;
+}
+
+#color-white {
+    color: #FBF9F1;
+}
+
+#bg-white {
+    background-color: #FBF9F1;
+}
+
+.card-border-radius {
+    border-radius: 10px;
+}
+
+.icon-card {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}

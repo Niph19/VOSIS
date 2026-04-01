@@ -40,7 +40,7 @@ include("../header/config.php");
                         $Visi = $_POST['data_visi'];
                         $Misi = $_POST['data_misi'];
                         // Folder Upload
-                        $folder = "../assets/img/caketos/";
+                        $folder = "../../assets/img/caketos/";
                         
                         // Ambil data file
                         $nama_File = $_FILES['data_foto_calon']['name'];

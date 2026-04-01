@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Foto = $_FILES["data_foto"]["name"];
     $tmp_Foto = $_FILES["data_foto"]["tmp_name"];
 
-    $folder = "../assets/img/admin/";
+    $folder = "../../assets/img/admin/";
 
     move_uploaded_file($tmp_Foto, $folder . $Foto);
 
@@ -75,7 +75,7 @@ include("sidebar.php");
                             <input type="text" class="form-control" name="data_alamat" value="<?= $admin['Alamat']?>">
                         </div>
                         <div class="form-group">
-                            <img src="../assets/img/admin/<?=$admin['Foto']?>" class="avatar avatar-md rounded-circle my-3" style="width: 75px; height: 75px; object-fit: cover;">
+                            <img src="../../assets/img/admin/<?=$admin['Foto']?>" class="avatar avatar-md rounded-circle my-3" style="width: 75px; height: 75px; object-fit: cover;">
                             <label for="image_uploads">Upload Foto Admin</label><br>
                             <input type="file" id="foto_admin" name="data_foto"
                                 accept="image/png, image/jpeg, image/jpg" value="<?= $admin['Foto']?>">

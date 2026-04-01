@@ -33,6 +33,12 @@ include("../header/config.php");
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Alamat</th>
                                     <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Username</th>
+                                    <th
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Password</th>
+                                    <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 15%; ">
                                         Action</th>
                                 </tr>
@@ -52,7 +58,7 @@ include("../header/config.php");
                                             </div>
                                         </td>
                                         <td class="align-middle text-center p-2">
-                                            <img src="../assets/img/siswa/<?= $data['Foto']?>" class="avatar avatar-md rounded-circle" style="width: 75px; height: 75px; object-fit: cover;">
+                                            <img src="../../assets/img/siswa/<?= $data['Foto']?>" class="avatar avatar-md rounded-circle" style="width: 75px; height: 75px; object-fit: cover;">
                                         </td>
                                         <td>
                                             <p class="text-xs mb-0 text-center font-weight-bolder"><?= $data['Nama']?></p>
@@ -66,6 +72,12 @@ include("../header/config.php");
                                         </td>
                                         <td class="align-middle text-center">
                                             <span class="text-secondary text-xs font-weight-bold"><?= $data["Alamat"]?></span>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <span class="text-secondary text-xs font-weight-bold"><?= $data["Username"]?></span>
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            <span class="text-secondary text-xs font-weight-bold"><?= $data["Password"]?></span>
                                         </td>
                                         <td class="align-middle text-center">
                                             <a href="edit_data_siswa.php?id=<?= $data['Nomor']; ?>" class="btn btn-primary align-middle">Edit</a>

@@ -49,13 +49,13 @@ include("../header/config.php");
                                             </div>
                                         </td>
                                         <td class="align-middle text-center p-2">
-                                            <img src="../assets/img/caketos/<?= $data['Foto']?>" class="avatar avatar-md rounded-circle" style="width: 75px; height: 75px; object-fit: cover;">
+                                            <img src="../../assets/img/caketos/<?= $data['Foto']?>" class="avatar avatar-md rounded-circle" style="width: 75px; height: 75px; object-fit: cover;">
                                         </td>
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0 text-center"><?= $data['Nama'] ?></p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Visi'] ?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-wrap"><?= $data['Visi'] ?></p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
                                             <p class="text-xs font-weight-bold mb-0"><?= $data['Misi'] ?></p>

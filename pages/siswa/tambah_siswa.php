@@ -42,6 +42,16 @@ include("../header/config.php");
                         </div>
 
                         <div class="form-group">
+                            <label for="alamat">Username</label>
+                            <input type="text" class="form-control" name="data_username" placeholder="Username Anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="alamat">Password</label>
+                            <input type="password" class="form-control" name="data_password" placeholder="Password Anda" required>
+                        </div>
+
+                        <div class="form-group">
                             <label for="image_uploads">Upload Foto Siswa</label><br>
                             <input type="file" id="foto_siswa" required name="data_foto_siswa"
                                 accept="image/png, image/jpeg, image/jpg" />
@@ -59,9 +69,11 @@ include("../header/config.php");
                         $kelas = $_POST['data_kelas'];
                         $jurusan = $_POST['data_jurusan'];
                         $alamat = $_POST['data_alamat'];
+                        $username = $_POST['data_username'];
+                        $password = $_POST['data_password'];
 
                         // Folder Upload
-                        $folder = "../assets/img/siswa/";
+                        $folder = "../../assets/img/siswa/";
                         
                         // Ambil data file
                         $nama_File = $_FILES['data_foto_siswa']['name'];
@@ -74,11 +86,12 @@ include("../header/config.php");
 
                         // Pindahkan file ke folder tujuan
                         move_uploaded_file($tmp_File, $folder . $nama_baru);
-                        $query = "INSERT INTO tbl_siswa(Nama, Kelas, Jurusan, Alamat, Foto) 
-                        VALUES ('$Nama','$kelas','$jurusan', '$alamat', '$nama_baru')";
+                        $query = "INSERT INTO tbl_siswa(Nama, Kelas, Jurusan, Alamat, Foto, Username, Password) 
+                        VALUES ('$Nama','$kelas','$jurusan', '$alamat', '$nama_baru', '$username', '$password')";
 
                         if (mysqli_query($koneksi, $query)) {
                             echo "<div class='alert alert-success text-center'>Data Berhasil Disimpan</div>";
+                            header("Location: siswa.php");
                         } else {
                             echo "<div class='alert alert-danger text-center'>
                             Gagal : " . mysqli_error($koneksi) . "

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Foto = $_FILES["data_siswa"]["name"];
     $tmp_Foto = $_FILES["data_siswa"]["tmp_name"];
 
-    $folder = "../assets/img/siswa/";
+    $folder = "../../assets/img/siswa/";
 
     move_uploaded_file($tmp_Foto, $folder . $Foto);
 
@@ -89,7 +89,7 @@ include("sidebar.php");
                         </div>
 
                         <div class="form-group">
-                            <img src="../assets/img/siswa/<?= $siswa['Foto']?>" class="avatar avatar-md rounded-circle my-3" style="width: 75px; height: 75px; object-fit: cover;">
+                            <img src="../../assets/img/siswa/<?= $siswa['Foto']?>" class="avatar avatar-md rounded-circle my-3" style="width: 75px; height: 75px; object-fit: cover;">
                             <label for="image_uploads">Upload Foto siswa</label><br>
                             <input type="file" id="foto_siswa" name="data_siswa"
                                 accept="image/png, image/jpeg, image/jpg" value="<?= $siswa['Foto']?>">

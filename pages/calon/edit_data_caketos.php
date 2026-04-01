@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $Foto = $_FILES["data_foto"]["name"];
     $tmp_Foto = $_FILES["data_foto"]["tmp_name"];
 
-    $folder = "../assets/img/caketos/";
+    $folder = "../../assets/img/caketos/";
 
     move_uploaded_file($tmp_Foto, $folder . $Foto);
 
@@ -70,7 +70,7 @@ include("sidebar.php");
                             <input type="text" class="form-control" name="data_misi" value="<?= $caketos['Misi']?>">
                         </div>
                         <div class="form-group">
-                            <img src="../assets/img/caketos/<?= $caketos['Foto']?>" class="avatar avatar-md rounded-circle my-3" style="width: 75px; height: 75px; object-fit: cover;">
+                            <img src="../../assets/img/caketos/<?= $caketos['Foto']?>" class="avatar avatar-md rounded-circle my-3" style="width: 75px; height: 75px; object-fit: cover;">
                             <label for="image_uploads">Upload Foto Calon</label><br>
                             <input type="file" id="foto_calon" name="data_foto"
                                 accept="image/png, image/jpeg, image/jpg" value="<?= $caketos['Foto']?>">
