@@ -8,7 +8,7 @@ include("../header/config.php");
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Data Admin</h6>
+                    <h4>Data Admin</h4>
                     <div class="card-button d-flex gap-2">
                         <a href="tambah_admin.php" class="btn btn-primary">Tambah Admin</a>
                         <form action="export_pdf_admin.php" method="POST" target="_blank">

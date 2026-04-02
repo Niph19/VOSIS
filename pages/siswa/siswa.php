@@ -7,7 +7,7 @@ include("../header/config.php");
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>Data Siswa</h6>
+                    <h4>Data Siswa</h4>
                     <div class="card-button d-flex gap-2">
                         <a href="tambah_siswa.php" class="btn btn-primary">Tambah Data</a>
                         <form action="export_pdf_siswa.php" method="POST" target="_blank">
