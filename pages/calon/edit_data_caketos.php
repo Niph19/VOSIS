@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 
-include("sidebar.php");
+include("../header/sidebar.php");
 ?>
 
 <div class="container-fluid py-4">

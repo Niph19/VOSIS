@@ -46,7 +46,7 @@ include("../header/config.php");
                         $Alamat = $_POST['data_alamat'];
 
                         // Folder Upload
-                        $folder = "../assets/img/admin/";
+                        $folder = "../../assets/img/admin/";
                         
                         // Ambil data file
                         $nama_File = $_FILES['data_foto_admin']['name'];
