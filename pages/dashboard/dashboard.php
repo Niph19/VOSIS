@@ -25,7 +25,7 @@ foreach ($grafik as $row) {
                         <div id="card-body1" class="card-body p-3 position-relative">
                             <div class="row">
                                 <div class="col text-start">
-                                    <h4 id='color-white' class="font-weight-bolder mb-0 mt-1 text-wrap">
+                                    <h4 id='color-white' class="mb-0 mt-1 text-wrap">
                                         <?php
                                         $pemenang = mysqli_query($koneksi, "SELECT tbl_caketos.Nama, COUNT(tbl_voting.id_calon) AS Jumlah FROM tbl_caketos INNER JOIN tbl_voting on tbl_caketos.id_calon=tbl_voting.id_calon group by tbl_voting.id_calon limit 1;");
                                         $sementara = mysqli_fetch_assoc($pemenang);
@@ -163,7 +163,7 @@ foreach ($grafik as $row) {
                 <div class="card-header pb-0">
                     <h5>Calon Ketua OSIS</h5>
                 </div>
-                <div class="card-body px-0 pt-2">
+                <div class="card-body px-0 pt-2 ps-2">
                         <div class="row g-0">
                         <?php
                         $no = 1;
@@ -171,7 +171,7 @@ foreach ($grafik as $row) {
                         foreach ($query as $data): ?>
                             <div class="col px-0">
                                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="card calon-card ps-2">
+                                    <div class="card calon-card">
                                         <!-- Jika tombol ini diklik, jalankan fungsi pilihcaketos sambil ngirim data calon  -->
                                         <span
                                             class="badge text-bg-secondary position-absolute top-0 start-0 m-2 fs-3 px-3 py-2">

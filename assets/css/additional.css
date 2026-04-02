@@ -21,8 +21,20 @@
     color: #FBF9F1;
 }
 
+.color-white {
+    color: #FBF9F1;
+}
+
 #bg-white {
     background-color: #FBF9F1;
+}
+
+#color-secondary {
+    color: #C9A050;
+}
+
+#bg-secondary {
+    background-color: #C9A050;
 }
 
 .card-border-radius {
