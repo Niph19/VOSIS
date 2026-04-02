@@ -52,12 +52,25 @@ $html .= '
             $html .= '
                 <tr>
                     <td>' . $no++ . '</td>
-                    <td>' . $row('Nama') . '</td>
-                    <td>' . $row('Jumlah') . '</td>
+                    <td>' . $row['Nama'] . '</td>
+                    <td>' . $row['Jumlah'] . '</td>
                 </tr>
             ';
         }
 $html .= '</tbody></table>';
+
+// ================= FOOTER =================
+$html .= '
+<br><br>
+<table width="100%">
+    <tr>
+        <td align="right">
+            Dicetak pada: ' . $tanggal . '
+        </td>
+    </tr>
+</table>
+';
+
 
 // render
 $pdf->writeHTML($html, true, false, true, false, '');

@@ -9,20 +9,26 @@ include("../header/config.php");
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Data Calon Ketua OSIS</h6>
-                    <a href="tambah_caketos.php" class="btn btn-primary">Tambah Calon</a>
+                    <div class="card-button d-flex gap-2">
+                        <a href="tambah_caketos.php" class="btn btn-primary">Tambah Calon</a>
+                        <form action="export_pdf_caketos.php" method="POST" target="_blank">
+                            <button type="submit" class="btn btn-primary">Export PDF</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 5%;">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                                        style="width: 5%;">
                                         Nomor</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 " style="width: 10%; ">
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 "
+                                        style="width: 10%; ">
                                         Foto</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 px-2 text-center" style="width: 15%; ">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 px-2 text-center"
+                                        style="width: 15%; ">
                                         Nama</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -30,8 +36,8 @@ include("../header/config.php");
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Misi</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 15%; ">
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                                        style="width: 15%; ">
                                         Action</th>
                                 </tr>
                             </thead>
@@ -49,7 +55,9 @@ include("../header/config.php");
                                             </div>
                                         </td>
                                         <td class="align-middle text-center p-2">
-                                            <img src="../../assets/img/caketos/<?= $data['Foto']?>" class="avatar avatar-md rounded-circle" style="width: 75px; height: 75px; object-fit: cover;">
+                                            <img src="../../assets/img/caketos/<?= $data['Foto'] ?>"
+                                                class="avatar avatar-md rounded-circle"
+                                                style="width: 75px; height: 75px; object-fit: cover;">
                                         </td>
                                         <td>
                                             <p class="text-xs font-weight-bold mb-0 text-center"><?= $data['Nama'] ?></p>

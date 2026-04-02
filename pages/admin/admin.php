@@ -9,20 +9,26 @@ include("../header/config.php");
             <div class="card mb-4">
                 <div class="card-header pb-0">
                     <h6>Data Admin</h6>
-                    <a href="tambah_admin.php" class="btn btn-primary">Tambah Admin</a>
+                    <div class="card-button d-flex gap-2">
+                        <a href="tambah_admin.php" class="btn btn-primary">Tambah Admin</a>
+                        <form action="export_pdf_admin.php" method="POST" target="_blank">
+                            <button type="submit" class="btn btn-primary">Export PDF</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 5%;">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                                        style="width: 5%;">
                                         Nomor</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 " style="width: 10%">
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 "
+                                        style="width: 10%">
                                         Foto</th>
-                                    <th
-                                        class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 px-2 text-center" style="width: 15%">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 px-2 text-center"
+                                        style="width: 15%">
                                         Username</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -33,16 +39,16 @@ include("../header/config.php");
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Alamat</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 15%; ">
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
+                                        style="width: 15%; ">
                                         Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                            $no = 1;
-                            $query = mysqli_query($koneksi, "SELECT * FROM `tbl_admin`");
-                            foreach ($query as $data):  ?>
+                                $no = 1;
+                                $query = mysqli_query($koneksi, "SELECT * FROM `tbl_admin`");
+                                foreach ($query as $data): ?>
                                     <tr>
                                         <td>
                                             <div class="d-flex px-2 py-1">
@@ -52,27 +58,33 @@ include("../header/config.php");
                                             </div>
                                         </td>
                                         <td class="align-middle text-center p-2">
-                                            <img src="../../assets/img/admin/<?= $data['Foto']?>" class="avatar avatar-md rounded-circle" style="width: 75px; height: 75px; object-fit: cover;">
+                                            <img src="../../assets/img/admin/<?= $data['Foto'] ?>"
+                                                class="avatar avatar-md rounded-circle"
+                                                style="width: 75px; height: 75px; object-fit: cover;">
                                         </td>
                                         <td>
-                                            <p class="text-xs font-weight-bold mb-0 text-center"><?= $data['Username']?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-center"><?= $data['Username'] ?>
+                                            </p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Password']?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Password'] ?></p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Nama']?></p>
+                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Nama'] ?></p>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <span class="text-secondary text-xs font-weight-bold"><?= $data["Alamat"]?></span>
+                                            <span
+                                                class="text-secondary text-xs font-weight-bold"><?= $data["Alamat"] ?></span>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="edit_data_admin.php?id=<?= $data['id_admin']; ?>" class="btn btn-primary align-middle">Edit</a>
-                                            <a href="delete_admin.php?id=<?= $data['id_admin']; ?>" class="btn btn-danger align-middle">Delete</a>
+                                            <a href="edit_data_admin.php?id=<?= $data['id_admin']; ?>"
+                                                class="btn btn-primary align-middle">Edit</a>
+                                            <a href="delete_admin.php?id=<?= $data['id_admin']; ?>"
+                                                class="btn btn-danger align-middle">Delete</a>
                                         </td>
                                     </tr>
-                                    <?php endforeach ?>
-                                </tbody>
+                                <?php endforeach ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
