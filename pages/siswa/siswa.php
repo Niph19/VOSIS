@@ -9,9 +9,9 @@ include("../header/config.php");
                 <div class="card-header pb-0">
                     <h4>Data Siswa</h4>
                     <div class="card-button d-flex gap-2">
-                        <a href="tambah_siswa.php" class="btn btn-primary">Tambah Data</a>
+                        <a id="bg-primary" href="tambah_siswa.php" class="btn color-white">Tambah Data</a>
                         <form action="export_pdf_siswa.php" method="POST" target="_blank">
-                            <button type="submit" class="btn btn-primary">Export PDF</button>
+                            <button id="bg-secondary" type="submit" class="btn color-white">Export PDF</button>
                         </form>
                     </div>
                 </div>
@@ -53,7 +53,10 @@ include("../header/config.php");
                                 <tbody>
                                     <?php
                                     $no = 1;
-                                    $query = mysqli_query($koneksi, "SELECT * FROM `tbl_siswa`");
+                                    $query = mysqli_query($koneksi, "SELECT *,
+                                    SUBSTRING_INDEX(Nama, ' ', 1) AS nama_depan,
+                                    IF(LOCATE(' ', Nama) > 0, SUBSTRING(Nama, LOCATE(' ', Nama) + 1), '') AS nama_belakang
+                                    FROM tbl_siswa;");
                                     foreach ($query as $data): ?>
                                         <tr>
                                             <td>
@@ -73,7 +76,7 @@ include("../header/config.php");
                                                 <p class="text-xs mb-0 text-center font-weight-bolder"><?= $data['Nama'] ?>
                                                 </p>
                                                 <p class="text-xs mb-0 text-center font-weight-light">
-                                                    <?= $data['Nama'] ?>@gmail.com
+                                                    <?= $data['nama_depan'] ?>@gmail.com
                                                 </p>
                                             </td>
                                             <td class="align-middle text-center text-sm">
@@ -96,9 +99,9 @@ include("../header/config.php");
                                             </td>
                                             <td class="align-middle text-center">
                                                 <a href="edit_data_siswa.php?id=<?= $data['Nomor']; ?>"
-                                                    class="btn btn-primary align-middle">Edit</a>
+                                                    class="btn bg-primary color-white align-middle">Edit</a>
                                                 <a href="delete_siswa.php?id=<?= $data['Nomor']; ?>"
-                                                    class="btn btn-danger align-middle">Delete</a>
+                                                    id="bg-secondary" class="btn color-white align-middle">Delete</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

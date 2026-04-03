@@ -20,7 +20,7 @@ foreach ($query as $row) {
     <div class="card mb-4 p-4">
         <form action="export_pdf.php" method="POST" target="_blank">
             <input type="hidden" name="chart_image" id="chart_image">
-            <button type="submit" onclick="exportPDF()" class="btn btn-primary">Export PDF</button>
+            <button type="submit" onclick="exportPDF()" id="bg-secondary" class="btn color-white">Export PDF</button>
         </form>
         <div id="areaPDF">
             <h3 align="center">Grafik Perolehan Suara Ketua OSIS</h3>

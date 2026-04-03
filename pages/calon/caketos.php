@@ -10,9 +10,9 @@ include("../header/config.php");
                 <div class="card-header pb-0">
                     <h4>Data Calon Ketua OSIS</h4>
                     <div class="card-button d-flex gap-2">
-                        <a href="tambah_caketos.php" class="btn btn-primary">Tambah Calon</a>
+                        <a href="tambah_caketos.php" class="btn bg-primary color-white">Tambah Calon</a>
                         <form action="export_pdf_caketos.php" method="POST" target="_blank">
-                            <button type="submit" class="btn btn-primary">Export PDF</button>
+                            <button id="bg-secondary" type="submit" class="btn color-white">Export PDF</button>
                         </form>
                     </div>
                 </div>
@@ -66,13 +66,13 @@ include("../header/config.php");
                                             <p class="text-xs font-weight-bold mb-0 text-wrap"><?= $data['Visi'] ?></p>
                                         </td>
                                         <td class="align-middle text-center text-sm">
-                                            <p class="text-xs font-weight-bold mb-0"><?= $data['Misi'] ?></p>
+                                            <p class="text-xs font-weight-bold mb-0 text-wrap"><?= $data['Misi'] ?></p>
                                         </td>
                                         <td class="align-middle text-center">
                                             <a href="edit_data_caketos.php?id=<?= $data['id_calon']; ?>"
-                                                class="btn btn-primary align-middle">Edit</a>
+                                                class="btn bg-primary color-white align-middle">Edit</a>
                                             <a href="delete_caketos.php?id=<?= $data['id_calon']; ?>"
-                                                class="btn btn-danger align-middle">Delete</a>
+                                                id="bg-secondary" class="btn color-white align-middle">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

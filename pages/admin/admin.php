@@ -10,9 +10,9 @@ include("../header/config.php");
                 <div class="card-header pb-0">
                     <h4>Data Admin</h4>
                     <div class="card-button d-flex gap-2">
-                        <a href="tambah_admin.php" class="btn btn-primary">Tambah Admin</a>
+                        <a href="tambah_admin.php" class="btn color-white bg-primary">Tambah Admin</a>
                         <form action="export_pdf_admin.php" method="POST" target="_blank">
-                            <button type="submit" class="btn btn-primary">Export PDF</button>
+                            <button id="bg-secondary" type="submit" class="btn color-white">Export PDF</button>
                         </form>
                     </div>
                 </div>
@@ -78,9 +78,9 @@ include("../header/config.php");
                                         </td>
                                         <td class="align-middle text-center">
                                             <a href="edit_data_admin.php?id=<?= $data['id_admin']; ?>"
-                                                class="btn btn-primary align-middle">Edit</a>
+                                                class="btn bg-primary color-white align-middle">Edit</a>
                                             <a href="delete_admin.php?id=<?= $data['id_admin']; ?>"
-                                                class="btn btn-danger align-middle">Delete</a>
+                                                id="bg-secondary" class="btn color-white align-middle">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
