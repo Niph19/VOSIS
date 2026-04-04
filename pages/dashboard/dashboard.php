@@ -185,7 +185,7 @@ foreach ($grafik as $row) {
                                         <h4 id="color-text" class="card-title pb-1 fs-6 fw-normal"><?= $data['nama_belakang'] ?></h4>
                                         <div class="d-flex">
                                             <p id="color-secondary" class="data_kelas fw-bold mt-1 mb-0">KELAS</p>
-                                            <p id="color-primary" class="data_kelas fw-bold ms-auto fs-5 mb-0">
+                                            <p id="color-text" class="data_kelas fw-bold ms-auto fs-5 mb-0">
                                                 <?= $data['Kelas']; ?>
                                                 </p>
                                         </div>

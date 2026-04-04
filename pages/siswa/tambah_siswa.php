@@ -91,7 +91,6 @@ include("../header/config.php");
 
                         if (mysqli_query($koneksi, $query)) {
                             echo "<div class='alert alert-success text-center'>Data Berhasil Disimpan</div>";
-                            header("Location: siswa.php");
                         } else {
                             echo "<div class='alert alert-danger text-center'>
                             Gagal : " . mysqli_error($koneksi) . "
